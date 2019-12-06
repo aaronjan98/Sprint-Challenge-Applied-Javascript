@@ -20,11 +20,11 @@
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response => {
-    console.log(response);
+    //console.log(response);
     let foo = Object.values(response.data.articles)
-    console.log(foo);
+    //console.log(foo);
     foo.forEach(article => {
-        console.log(article);
+        //console.log(article);
         article.forEach(paper => { 
             console.log(paper);
             const newCard = NewArticle(paper);
