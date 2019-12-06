@@ -20,11 +20,17 @@
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response => {
-    console.log(response.data.articles);
-    // response.data.articles.forEach(item => {
-    //     const newTopic = NewTab(item);
-    //     cardsContainer.appendChild(newTopic);
-    // });
+    console.log(response);
+    let foo = Object.values(response.data.articles)
+    console.log(foo);
+    foo.forEach(article => {
+        console.log(article);
+        article.forEach(paper => { 
+            console.log(paper);
+            const newCard = NewArticle(paper);
+            cardsContainer.appendChild(newCard);
+        })
+    });
 })
 .catch(error => {
     console.log("The data was not returned", error);
@@ -46,5 +52,13 @@ function NewArticle(article){
     img.src = article.authorPhoto;
     by.textContent = `By: ${article.authorName}`;
 
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imgContainer);
+    imgContainer.appendChild(img);
+    author.appendChild(by);
+
     return card;
 }
+
+const cardsContainer = document.querySelector('.cards-container');
