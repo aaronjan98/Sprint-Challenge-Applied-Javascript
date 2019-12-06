@@ -31,11 +31,28 @@ function CreateCarousel(){
   leftButton.classList.add('left-button');
   leftButton.textContent = "<";
   mountains.src = "./assets/carousel/mountains.jpeg";
-  computer.src = "./assets/carousel/computer.jpeg";
+  mountains.textContent = "./assets/carousel/mountains.jpeg";
+ // computer.src = "./assets/carousel/computer.jpeg";
   trees.src = "./assets/carousel/trees.jpeg";
   turntable.src = "./assets/carousel/turntable.jpeg";
   rightButton.classList.add('right-button');
   rightButton.textContent = ">";
 
+  carousel.appendChild(leftButton);
+  carousel.appendChild(mountains);
+  carousel.appendChild(computer);
+  carousel.appendChild(trees);
+  carousel.appendChild(turntable);
+  carousel.appendChild(rightButton);
+
+  // carousel.addEventListener('click', event => {
+  //   console.log('button clicked', event.target)
+    
+  // })
+
   return carousel;
 }
+
+const carouselContainer = document.querySelector('.carousel-container');
+carouselContainer.appendChild(CreateCarousel());
+console.log(carouselContainer);
