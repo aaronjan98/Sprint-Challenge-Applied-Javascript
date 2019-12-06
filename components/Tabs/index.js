@@ -10,12 +10,21 @@
 
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(response => {
-    console.log(response);
+    console.log(response.data.topics);
     response.data.topics.forEach(item => {
-        const newDog = DogCard(item);
-        entryPoint.appendChild(newDog);
+        const newTopic = NewTab(item);
+        topics.appendChild(newTopic);
     });
 })
 .catch(error => {
     console.log("The data was not returned", error);
 });
+
+function NewTab(topic){
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = topic;
+
+    return tab;
+}
+const topics = document.querySelector(".topics");
