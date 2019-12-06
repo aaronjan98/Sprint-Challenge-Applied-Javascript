@@ -31,8 +31,7 @@ function CreateCarousel(){
   leftButton.classList.add('left-button');
   leftButton.textContent = "<";
   mountains.src = "./assets/carousel/mountains.jpeg";
-  mountains.textContent = "./assets/carousel/mountains.jpeg";
- // computer.src = "./assets/carousel/computer.jpeg";
+  computer.src = "./assets/carousel/computer.jpeg";
   trees.src = "./assets/carousel/trees.jpeg";
   turntable.src = "./assets/carousel/turntable.jpeg";
   rightButton.classList.add('right-button');
