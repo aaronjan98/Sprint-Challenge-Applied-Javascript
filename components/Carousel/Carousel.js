@@ -30,7 +30,6 @@ function CreateCarousel(){
   carousel.classList.add('carousel');
   leftButton.classList.add('left-button');
   leftButton.textContent = "<";
- // leftButton.onclick = plusSlides(-1);
   leftButton.onclick = () => { plusSlides(-1); };
   mountains.classList.add('mySlides', 'fade');
   mountains.src = "./assets/carousel/mountains.jpeg";
@@ -42,7 +41,6 @@ function CreateCarousel(){
   turntable.src = "./assets/carousel/turntable.jpeg";
   rightButton.classList.add('right-button');
   rightButton.textContent = ">";
-  //rightButton.onclick = plusSlides(1);
   rightButton.onclick = () => { plusSlides(1); };
 
   carousel.appendChild(leftButton);
@@ -60,7 +58,6 @@ function CreateCarousel(){
 const carouselContainer = document.querySelector('.carousel-container');
 carouselContainer.appendChild(CreateCarousel());
 
-// const mySlide = document.querySelector('.mySlide');
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -76,17 +73,11 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
   slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-
 
 }
