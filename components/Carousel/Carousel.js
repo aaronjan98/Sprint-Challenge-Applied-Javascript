@@ -30,9 +30,13 @@ function CreateCarousel(){
   carousel.classList.add('carousel');
   leftButton.classList.add('left-button');
   leftButton.textContent = "<";
+  mountains.classList.add('slide');
   mountains.src = "./assets/carousel/mountains.jpeg";
+  computer.classList.add('slide');
   computer.src = "./assets/carousel/computer.jpeg";
+  trees.classList.add('slide');
   trees.src = "./assets/carousel/trees.jpeg";
+  turntable.classList.add('slide');
   turntable.src = "./assets/carousel/turntable.jpeg";
   rightButton.classList.add('right-button');
   rightButton.textContent = ">";
@@ -54,4 +58,5 @@ function CreateCarousel(){
 
 const carouselContainer = document.querySelector('.carousel-container');
 carouselContainer.appendChild(CreateCarousel());
-console.log(carouselContainer);
+
+const slide = document.querySelector('.slide');
