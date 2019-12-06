@@ -26,5 +26,16 @@ function CreateCarousel(){
   const trees = document.createElement('img');
   const turntable = document.createElement('img');
   const rightButton = document.createElement('div');
-  
+
+  carousel.classList.add('carousel');
+  leftButton.classList.add('left-button');
+  leftButton.textContent = "<";
+  mountains.src = "./assets/carousel/mountains.jpeg";
+  computer.src = "./assets/carousel/computer.jpeg";
+  trees.src = "./assets/carousel/trees.jpeg";
+  turntable.src = "./assets/carousel/turntable.jpeg";
+  rightButton.classList.add('right-button');
+  rightButton.textContent = ">";
+
+  return carousel;
 }
